@@ -477,21 +477,21 @@ public static class LanguageHandlerEditor
 			{
 				switch(objectPair.changedValue.ObjectType)
 				{
-					case LocalizedObjectType.AUDIO:
+					case LocalizedObjectType.Audio:
 					objectPair.changedValue.ThisAudioClip = AssetDatabase.LoadAssetAtPath(assetPath, typeof(AudioClip)) as AudioClip;
 					break;
 					
-					case LocalizedObjectType.GAME_OBJECT:
+					case LocalizedObjectType.GameObject:
 					objectPair.changedValue.ThisGameObject = AssetDatabase.LoadAssetAtPath(assetPath, typeof(GameObject)) as GameObject;
 					break;
 						
-					case LocalizedObjectType.TEXTURE:
+					case LocalizedObjectType.Texture:
 					objectPair.changedValue.ThisTexture = AssetDatabase.LoadAssetAtPath(assetPath, typeof(Texture)) as Texture;
 					break;											
-					case LocalizedObjectType.TEXT_ASSET:
+					case LocalizedObjectType.TextAsset:
 					objectPair.changedValue.ThisTextAsset = AssetDatabase.LoadAssetAtPath(assetPath, typeof(TextAsset)) as TextAsset;
 					break;
-					case LocalizedObjectType.FONT:
+					case LocalizedObjectType.Font:
 					objectPair.changedValue.Font = AssetDatabase.LoadAssetAtPath(assetPath, typeof(Font)) as Font;
 					break;
 				}
@@ -527,27 +527,27 @@ public static class LanguageHandlerEditor
 		string currentAssetPath = string.Empty;
 		LocalizedObject objectToCopy = objectPair.changedValue;
 
-		if(objectToCopy.ObjectType == LocalizedObjectType.AUDIO && objectToCopy.ThisAudioClip != null)
+		if(objectToCopy.ObjectType == LocalizedObjectType.Audio && objectToCopy.ThisAudioClip != null)
 		{
 			filePath = LocalizationWorkspace.LanguageAudioFolderPath(thisCultureInfo.languageCode);
 			currentAssetPath = AssetDatabase.GetAssetPath(objectToCopy.ThisAudioClip);
 		}
-		else if(objectToCopy.ObjectType == LocalizedObjectType.TEXTURE && objectToCopy.ThisTexture != null)
+		else if(objectToCopy.ObjectType == LocalizedObjectType.Texture && objectToCopy.ThisTexture != null)
 		{
 			filePath = LocalizationWorkspace.LanguageTexturesFolderPath(thisCultureInfo.languageCode);
 			currentAssetPath = AssetDatabase.GetAssetPath(objectToCopy.ThisTexture);
 		}
-		else if(objectToCopy.ObjectType == LocalizedObjectType.GAME_OBJECT && objectToCopy.ThisGameObject != null)
+		else if(objectToCopy.ObjectType == LocalizedObjectType.GameObject && objectToCopy.ThisGameObject != null)
 		{
 			filePath = LocalizationWorkspace.LanguagePrefabsFolderPath(thisCultureInfo.languageCode);
 			currentAssetPath = AssetDatabase.GetAssetPath(objectToCopy.ThisGameObject);
 		}
-		else if(objectToCopy.ObjectType == LocalizedObjectType.TEXT_ASSET && objectToCopy.ThisTextAsset != null)
+		else if(objectToCopy.ObjectType == LocalizedObjectType.TextAsset && objectToCopy.ThisTextAsset != null)
 		{
 			filePath = LocalizationWorkspace.LanguageTextAssetsFolderPath(thisCultureInfo.languageCode);
 			currentAssetPath = AssetDatabase.GetAssetPath(objectToCopy.ThisTextAsset);
 		}
-		else if(objectToCopy.ObjectType == LocalizedObjectType.FONT && objectToCopy.Font != null)
+		else if(objectToCopy.ObjectType == LocalizedObjectType.Font && objectToCopy.Font != null)
 		{
 			filePath = LocalizationWorkspace.LanguageFontsFolderPath(thisCultureInfo.languageCode);
 			currentAssetPath = AssetDatabase.GetAssetPath(objectToCopy.Font);
@@ -565,7 +565,7 @@ public static class LanguageHandlerEditor
 		//Get the fileExtension of the asset
 		string fileExtension = FileUtility.GetFileExtension(Application.dataPath + currentAssetPath);
 		
-		if(objectToCopy.ObjectType != LocalizedObjectType.GAME_OBJECT){
+		if(objectToCopy.ObjectType != LocalizedObjectType.GameObject){
 	
 			//Copy or replace the file to the new path
 			FileUtil.ReplaceFile(currentAssetPath, filePath + "/" + newFileName + fileExtension);
@@ -595,26 +595,26 @@ public static class LanguageHandlerEditor
 		
 		switch(keyType)
 		{
-			case LocalizedObjectType.GAME_OBJECT:
+			case LocalizedObjectType.GameObject:
 			languageFolderPath = LocalizationWorkspace.LanguagePrefabsFolderPathRelative(cultureInfo.languageCode) + "/" + cleanKey + LocalizationWorkspace.prefabFileEnding;
 			break;
 			
-			case LocalizedObjectType.AUDIO:
+			case LocalizedObjectType.Audio:
 			languageFolderPath = LocalizationWorkspace.LanguageAudioFolderPathRelative(cultureInfo.languageCode);
 			break;
 			
-			case LocalizedObjectType.TEXTURE:
+			case LocalizedObjectType.Texture:
 			languageFolderPath = LocalizationWorkspace.LanguageTexturesFolderPathRelative(cultureInfo.languageCode);
 			break;
-			case LocalizedObjectType.TEXT_ASSET:
+			case LocalizedObjectType.TextAsset:
 			languageFolderPath = LocalizationWorkspace.LanguageTextAssetsFolderPathRelative(cultureInfo.languageCode);
 			break;
-			case LocalizedObjectType.FONT:
+			case LocalizedObjectType.Font:
 			languageFolderPath = LocalizationWorkspace.LanguageFontsFolderPathRelative(cultureInfo.languageCode);
 			break;
 		}
 
-		if(keyType != LocalizedObjectType.GAME_OBJECT)
+		if(keyType != LocalizedObjectType.GameObject)
 		{
 			string fileExtension = FileUtility.GetFileExtension(cleanKey, languageFolderPath);
 			languageFolderPath += "/" + cleanKey + fileExtension;
@@ -637,27 +637,27 @@ public static class LanguageHandlerEditor
 		
 		switch(keyType)
 		{
-			case LocalizedObjectType.GAME_OBJECT:
+			case LocalizedObjectType.GameObject:
 			languageFolderPath = LocalizationWorkspace.LanguagePrefabsFolderPathRelative(cultureInfo.languageCode) + "/" + cleanKey + LocalizationWorkspace.prefabFileEnding;
 			break;
 			
-			case LocalizedObjectType.AUDIO:
+			case LocalizedObjectType.Audio:
 			languageFolderPath = LocalizationWorkspace.LanguageAudioFolderPathRelative(cultureInfo.languageCode);
 			break;
 				
-			case LocalizedObjectType.TEXTURE:
+			case LocalizedObjectType.Texture:
 			languageFolderPath = LocalizationWorkspace.LanguageTexturesFolderPathRelative(cultureInfo.languageCode);
 			break;
 				
-			case LocalizedObjectType.TEXT_ASSET:
+			case LocalizedObjectType.TextAsset:
 			languageFolderPath = LocalizationWorkspace.LanguageTextAssetsFolderPathRelative(cultureInfo.languageCode);
 			break;
-			case LocalizedObjectType.FONT:
+			case LocalizedObjectType.Font:
 			languageFolderPath = LocalizationWorkspace.LanguageFontsFolderPathRelative(cultureInfo.languageCode);
 			break;
 		}
 
-		if(keyType != LocalizedObjectType.GAME_OBJECT)
+		if(keyType != LocalizedObjectType.GameObject)
 		{
 			string fileExtension = FileUtility.GetFileExtension(cleanKey, languageFolderPath);
 			languageFolderPath += "/" + cleanKey + fileExtension;

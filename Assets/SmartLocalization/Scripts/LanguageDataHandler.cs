@@ -157,7 +157,7 @@ internal class LanguageDataHandler
 			
 		return null;
 	}
-	
+		
 	internal T GetAsset<T>(string key) where T : UnityEngine.Object
 	{
 		LocalizedObject localizedObject = GetLocalizedObject(key);

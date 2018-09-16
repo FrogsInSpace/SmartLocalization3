@@ -345,7 +345,7 @@ public class TranslateLanguageWindow : EditorWindow
 		Dictionary<string,string> newLanguageValues = new Dictionary<string, string>();
 		foreach(var objectPair in loadedLanguageValues)
 		{
-			if(objectPair.changedValue.ObjectType == LocalizedObjectType.STRING)
+			if(objectPair.changedValue.ObjectType == LocalizedObjectType.String)
 			{
 				newLanguageValues.Add(objectPair.changedValue.GetFullKey(objectPair.keyValue), objectPair.changedValue.TextValue);
 			}
@@ -406,7 +406,7 @@ public class TranslateLanguageWindow : EditorWindow
 
 			GUIUtility.keyboardControl = 0;
 		}
-		if(item.changedValue.ObjectType == LocalizedObjectType.STRING && canLanguageBeTranslated &&
+		if(item.changedValue.ObjectType == LocalizedObjectType.String && canLanguageBeTranslated &&
 			translateFromLanguageValue != 0 && 
 			translateFromDictionary != null && translateFromDictionary[item.keyValue].TextValue != null &&
 			translateFromDictionary[item.keyValue].TextValue != string.Empty)
@@ -425,7 +425,7 @@ public class TranslateLanguageWindow : EditorWindow
 		EditorGUI.SelectableLabel(listColumns.GetColumnPosition(position, "Key"), item.keyValue);
 		EditorGUI.SelectableLabel(listColumns.GetColumnPosition(position, "Comment"), rootValues[item.keyValue].TextValue);
 		
-		if(item.changedValue.ObjectType != LocalizedObjectType.STRING && otherAvailableLanguageCodes.Count > 0)
+		if(item.changedValue.ObjectType != LocalizedObjectType.String && otherAvailableLanguageCodes.Count > 0)
 		{
 			bool overrideLang = EditorGUI.Toggle(listColumns.GetColumnPosition(position, "Override"), item.changedValue.OverrideLocalizedObject);
 			if(overrideLang != item.changedValue.OverrideLocalizedObject)
@@ -453,7 +453,7 @@ public class TranslateLanguageWindow : EditorWindow
 		bool setDirty = false;
 		if(!item.changedValue.OverrideLocalizedObject)
 		{
-			if(item.changedValue.ObjectType == LocalizedObjectType.STRING)
+			if(item.changedValue.ObjectType == LocalizedObjectType.String)
 			{
 				string newTextValue = EditorGUI.TextArea(newPosition, item.changedValue.TextValue);
 				if(newTextValue != item.changedValue.TextValue)
@@ -462,7 +462,7 @@ public class TranslateLanguageWindow : EditorWindow
 					item.changedValue.TextValue = newTextValue;
 				}
 			}
-			else if(item.changedValue.ObjectType == LocalizedObjectType.AUDIO)
+			else if(item.changedValue.ObjectType == LocalizedObjectType.Audio)
 			{
 				AudioClip newAudioValue = (AudioClip)EditorGUI.ObjectField(newPosition,
 																			item.changedValue.ThisAudioClip, 
@@ -473,7 +473,7 @@ public class TranslateLanguageWindow : EditorWindow
 					item.changedValue.ThisAudioClip = newAudioValue;
 				}
 			}
-			else if(item.changedValue.ObjectType == LocalizedObjectType.GAME_OBJECT)
+			else if(item.changedValue.ObjectType == LocalizedObjectType.GameObject)
 			{
 				GameObject newGameObjectValue = (GameObject)EditorGUI.ObjectField(newPosition,
 																		item.changedValue.ThisGameObject, 
@@ -485,7 +485,7 @@ public class TranslateLanguageWindow : EditorWindow
 					item.changedValue.ThisGameObject = newGameObjectValue;
 				}
 			}
-			else if(item.changedValue.ObjectType == LocalizedObjectType.TEXTURE)
+			else if(item.changedValue.ObjectType == LocalizedObjectType.Texture)
 			{
 				Texture newTextureValue = (Texture)EditorGUI.ObjectField(newPosition,
 																			item.changedValue.ThisTexture, 
@@ -496,7 +496,7 @@ public class TranslateLanguageWindow : EditorWindow
 					item.changedValue.ThisTexture = newTextureValue;
 				}
 			}
-			else if(item.changedValue.ObjectType == LocalizedObjectType.TEXT_ASSET)
+			else if(item.changedValue.ObjectType == LocalizedObjectType.TextAsset)
 			{
 				TextAsset newTextAssetValue = (TextAsset)EditorGUI.ObjectField(newPosition,
 																			item.changedValue.ThisTextAsset, 
@@ -507,7 +507,7 @@ public class TranslateLanguageWindow : EditorWindow
 					item.changedValue.ThisTextAsset = newTextAssetValue;
 				}
 			}
-			else if(item.changedValue.ObjectType == LocalizedObjectType.FONT)
+			else if(item.changedValue.ObjectType == LocalizedObjectType.Font)
 			{
 				Font newFontValue = (Font)EditorGUI.ObjectField(newPosition,
                                                                item.changedValue.Font, 
@@ -798,7 +798,7 @@ public class TranslateLanguageWindow : EditorWindow
 		int count = 0;
 		foreach(var rootValue in rootValues)
 		{
-			if(rootValue.Value.ObjectType == LocalizedObjectType.STRING)
+			if(rootValue.Value.ObjectType == LocalizedObjectType.String)
 			{
 				loadedLanguageValues[count].changedValue.TextValue = rootValue.Value.TextValue;
 			}
@@ -849,7 +849,7 @@ public class TranslateLanguageWindow : EditorWindow
 		var textsToTranslate = new List<string>();
 		foreach(var stringPair in translateFromDictionary)
 		{
-			if(stringPair.Value.ObjectType == LocalizedObjectType.STRING &&
+			if(stringPair.Value.ObjectType == LocalizedObjectType.String &&
 				stringPair.Value.TextValue != null && stringPair.Value.TextValue != string.Empty)
 			{
 				keys.Add(stringPair.Key);
@@ -870,7 +870,7 @@ public class TranslateLanguageWindow : EditorWindow
 	{
 		foreach(var translationValue in loadedLanguageValues)
 		{
-			if(translationValue.changedValue.ObjectType == LocalizedObjectType.STRING && 
+			if(translationValue.changedValue.ObjectType == LocalizedObjectType.String && 
 				translationValue.changedValue.TextValue != null && translationValue.changedValue.TextValue != string.Empty)
 			{
 				translationValue.changedValue.TextValue = translationValue.changedValue.TextValue.Replace(@"\n", "\n");

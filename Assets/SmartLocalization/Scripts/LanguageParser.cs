@@ -99,7 +99,7 @@ public static class LanguageParser
 		LocalizedObject newLocalizedObject = new LocalizedObject();
 		newLocalizedObject.ObjectType = LocalizedObject.GetLocalizedObjectType(key);
 		newLocalizedObject.TextValue = value;
-		if(newLocalizedObject.ObjectType != LocalizedObjectType.STRING && newLocalizedObject.TextValue != null && newLocalizedObject.TextValue.StartsWith("override="))
+		if(newLocalizedObject.ObjectType != LocalizedObjectType.String && newLocalizedObject.TextValue != null && newLocalizedObject.TextValue.StartsWith("override="))
 		{
 			newLocalizedObject.OverrideLocalizedObject = true;
 			newLocalizedObject.OverrideObjectLanguageCode = newLocalizedObject.TextValue.Substring("override=".Length);

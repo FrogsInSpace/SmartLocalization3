@@ -18,9 +18,9 @@ namespace SmartLocalization.ReorderableList.Internal {
 		static GUIHelper() {
 			var tyGUIClip = typeof(GUI).Assembly.GetType("UnityEngine.GUIClip");
 			if (tyGUIClip != null) {
-				var piVisibleRect = tyGUIClip.GetProperty("visibleRect", BindingFlags.Static | BindingFlags.Public);
+				var piVisibleRect = tyGUIClip.GetProperty("visibleRect", BindingFlags.Static | BindingFlags.NonPublic);
 				if (piVisibleRect != null)
-					VisibleRect = (Func<Rect>)Delegate.CreateDelegate(typeof(Func<Rect>), piVisibleRect.GetGetMethod());
+					VisibleRect = (Func<Rect>)Delegate.CreateDelegate(typeof(Func<Rect>), piVisibleRect.GetGetMethod(true));
 			}
 			
 			var miFocusTextInControl = typeof(EditorGUI).GetMethod("FocusTextInControl", BindingFlags.Static | BindingFlags.Public);
@@ -36,12 +36,12 @@ namespace SmartLocalization.ReorderableList.Internal {
 		/// <remarks>
 		/// <para>VisibleRect = TopmostRect + scrollViewOffsets</para>
 		/// </remarks>
-		public static Func<Rect> VisibleRect;
+		public static readonly Func<Rect> VisibleRect;
 
 		/// <summary>
 		/// Focus control and text editor where applicable.
 		/// </summary>
-		public static Action<string> FocusTextInControl;
+		public static readonly Action<string> FocusTextInControl;
 
 	}
 

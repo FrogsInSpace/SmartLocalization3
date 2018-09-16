@@ -95,7 +95,7 @@ internal class LocalizedObjectListAdaptor : GenericListAdaptor<SerializableLocal
 
 		if(IsWithinSearch(index))
 		{
-			if(currentObjectPair.changedValue.ObjectType == LocalizedObjectType.STRING)
+			if(currentObjectPair.changedValue.ObjectType == LocalizedObjectType.String)
 			{
 				if(collapseMultiline)
 				{

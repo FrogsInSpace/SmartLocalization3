@@ -14,19 +14,19 @@ namespace SmartLocalization.Editor
 			string tempKey = "TestKey";
 			string tempValue = "temp";
 			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
-			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.STRING), 
+			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.String), 
 			                                             tempValue);
 			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
-			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.AUDIO), 
+			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.Audio), 
 			                                             tempValue);
 			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
-			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.GAME_OBJECT), 
+			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.GameObject), 
 			                                             tempValue);
+//			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
+//			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.TEXTURE), 
+//			                                             tempValue);
 			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
-			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.TEXTURE), 
-			                                             tempValue);
-			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
-			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.STRING), 
+			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.String), 
 			                                             tempValue);
 		}
 
@@ -37,17 +37,17 @@ namespace SmartLocalization.Editor
 			string tempKey = "TestKey";
 			LocalizedObject tempStringValue = new LocalizedObject();
 
-			tempStringValue.ObjectType = LocalizedObjectType.STRING;
+			tempStringValue.ObjectType = LocalizedObjectType.String;
 			tempStringValue.TextValue = "TEMP";
 
 			LocalizedObject tempAudioValue = new LocalizedObject(tempStringValue);
-			tempAudioValue.ObjectType = LocalizedObjectType.AUDIO;
+			tempAudioValue.ObjectType = LocalizedObjectType.Audio;
 
 			LocalizedObject tempPrefabValue = new LocalizedObject(tempStringValue);
-			tempPrefabValue.ObjectType = LocalizedObjectType.GAME_OBJECT;
+			tempPrefabValue.ObjectType = LocalizedObjectType.GameObject;
 
 			LocalizedObject tempTextureValue = new LocalizedObject(tempStringValue);
-			tempTextureValue.ObjectType = LocalizedObjectType.TEXTURE;
+			//tempTextureValue.ObjectType = LocalizedObjectType.TEXTURE;
 
 			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
 			                                             tempKey, 

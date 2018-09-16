@@ -380,13 +380,13 @@ public class EditRootLanguageFileWindow : EditorWindow
 	void OnKeyAdded(int addedIndex)
 	{
 		LocalizedObject dummyObject = new LocalizedObject();
-		dummyObject.ObjectType = LocalizedObjectType.STRING;
+		dummyObject.ObjectType = LocalizedObjectType.String;
 		dummyObject.TextValue = "New Value";
 
 		string addedKey = LanguageDictionaryHelper.AddNewKeyPersistent(parsedRootValues, "New Key", dummyObject);
 
 		LocalizedObject copyObject = new LocalizedObject();
-		copyObject.ObjectType = LocalizedObjectType.STRING;
+		copyObject.ObjectType = LocalizedObjectType.String;
 		copyObject.TextValue = "New Value";
 
 		changedRootKeys.Add(new SerializableStringPair(addedKey, addedKey));

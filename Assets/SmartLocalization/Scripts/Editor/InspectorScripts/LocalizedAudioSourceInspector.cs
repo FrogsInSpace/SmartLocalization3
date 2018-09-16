@@ -35,7 +35,7 @@ public class LocalizedAudioSourceInspector : Editor
 	{
 		base.OnInspectorGUI();
 		
-		selectedKey = LocalizedKeySelector.SelectKeyGUI(selectedKey, true, LocalizedObjectType.AUDIO);
+		selectedKey = LocalizedKeySelector.SelectKeyGUI(selectedKey, true, LocalizedObjectType.Audio);
 		
 		if(!Application.isPlaying && GUILayout.Button("Use Key", GUILayout.Width(70)))
 		{

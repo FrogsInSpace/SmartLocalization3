@@ -31,7 +31,7 @@ public static class LocalizedKeySelector
 	/// <param name="sort">If the select key GUI should filter keys with a certain type</param>
 	/// <param name="sortType">If sort is true, this is the type of keys that will be shown.</param>
 	/// <returns>The currently chosen key</returns>
-	public static string SelectKeyGUI(string currentKey, bool sort = false, LocalizedObjectType sortType = LocalizedObjectType.INVALID)
+	public static string SelectKeyGUI(string currentKey, bool sort = false, LocalizedObjectType sortType = LocalizedObjectType.Invalid)
 	{
 		if(!ShouldShowKeySelector())
 		{
@@ -55,7 +55,7 @@ public static class LocalizedKeySelector
 		GUILayout.Label("Sort Mode: ",EditorStyles.miniLabel, GUILayout.Width(55));
 		if(sort)
 		{
-			GUILayout.Label(sortType.ToString() + " only.",EditorStyles.miniLabel);
+			GUILayout.Label(sortType + " only.",EditorStyles.miniLabel);
 		}
 		else
 		{
@@ -74,7 +74,7 @@ public static class LocalizedKeySelector
 			currentKey = parsedRootValues[newIndex];
 		}
 			
-		if(!autoRefresh && GUILayout.Button("Refresh list", GUILayout.Width(70)))
+		if(!autoRefresh && GUILayout.Button("Refresh list", GUILayout.Width(120)))
 		{
 			RefreshList(sort, sortType);
 		}
@@ -135,7 +135,7 @@ public static class LocalizedKeySelector
 			else
 			{
 				//Use invalid for showing all
-				loadedObjectType = LocalizedObjectType.INVALID;
+				loadedObjectType = LocalizedObjectType.Invalid;
 				
 				parsedRootValues.AddRange(values.Keys);
 			}
