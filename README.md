@@ -2,14 +2,18 @@
 
 In comparison with original Smart Localization 2, developed by Niklas Borglund & Jakob Hillerström this fork have some advantages:
 
--Unity 2018.2 full support
--TextMesh Pro support
--Sprite loading from resources
--UI.Image component
--Sprite component
--For greater experience you can choose localizations for a certain item in Inspector
--Legacy code removed
--New example scene
+-Unity 2018.2 full support  
+-TextMesh Pro support  
+-Sprite loading from resources  
+-UI.Image component  
+-Sprite component  
+-For greater experience you can choose localizations for a certain item in Inspector  
+-Legacy code removed  
+-New example scene  
+
+# Instalation
+
+Please visit [Releases Page](https://github.com/chocolacula/SmartLocalization3/releases) where you can get .unitypackage for Unity 2018.2 or download and import Assets/SmartLocalization folder if yor Unity version is lower then 2018. 
 
 # Instruction
 
