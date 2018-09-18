@@ -1,4 +1,17 @@
-# Smart Localization 2 by Niklas Borglund & Jakob Hillerström 
+# Smart Localization 3
+
+In comparison with original Smart Localization 2, developed by Niklas Borglund & Jakob Hillerström this fork have some advantages:
+
+-Unity 2018.2 full support
+-TextMesh Pro support
+-Sprite loading from resources
+-UI.Image component
+-Sprite component
+-For greater experience you can choose localizations for a certain item in Inspector
+-Legacy code removed
+-New example scene
+
+# Instruction
 
 Localizing your game has never been this easy. Localize your game with only a few mouse clicks.
 
@@ -7,35 +20,7 @@ Just open the Smart Localization Window in Window->Smart Localization and start 
 Edit the root language file by adding some keys and base values.
 
 To add a new language to your project, choose a language in the "Add/Update Languages" panel and click "Create".
-To edit and translate a language, press the "Translate" button on the language you want to work with in the 
-Created Languages panel.
-
-There's an example scene in SmartLocalization->Examples called LoadAllLanguages, which draws all the available
-languages and values on the screen. The code for the example is also included and lies within the same folder.
-
-# Building the Smart Localization Unity Package
-You can build the unitypackage with the built in tools in unity manually - or you can use the gulp jobs in the project.
-The gulp jobs will by default run all the unit tests and export the package into a folder called "dist"
-
-First, make sure you have npm installed - https://nodejs.org/en/download/
-
-Then, either with terminal or the windows command prompt, locate yourself to the location of your clone of this repository and
-run the following commands:
-
-First, you need to install the node modules required.
-```
-npm install
-```
-
-Then you only have to write the following command everytime you want to export the package given that your Unity installation is at the default location.
-```
-npm run gulp
-```
-
-If it's not in the default location, you can set it yourself with the --unityPath parameter in the gulp job.
-```
-npm --unityPath=<YOUR_PATH> run gulp'
-```
+To edit and translate a language, press the "Translate" button on the language you want to work with in the Created Languages panel.
 
 # Code Examples
 
