@@ -1,7 +1,4 @@
-// Voloshin Maxim
-
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace SmartLocalization
 {
@@ -28,7 +25,8 @@ namespace SmartLocalization
 
 		private void OnChangeLanguage(LanguageManager languageManager)
 		{
-			GetComponent<SpriteRenderer>().sprite = LanguageManager.Instance.GetSprite(localizedKey);
+			var spriteRenderer = GetComponent<SpriteRenderer>();			
+			spriteRenderer.sprite = LanguageManager.Instance.GetSprite(localizedKey);
 		}
 	}
 }

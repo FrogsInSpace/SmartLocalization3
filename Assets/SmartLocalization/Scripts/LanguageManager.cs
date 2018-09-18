@@ -612,12 +612,12 @@ namespace SmartLocalization
 		}
 		
 		/// <summary>
-		/// Returns a sprite in the current language for the key with plural forms. Returns null if nothing is found.
+		/// Returns a texture in the current language for the key with plural forms. Returns null if nothing is found.
 		/// </summary>
-		/// <returns>The sprite.</returns>
-		public Sprite GetSprite(string key, int count)
+		/// <returns>The texture.</returns>
+		public Texture GetTexture(string key, int count)
 		{
-			return GetSprite(PluralForms.GetPluralKey(languageDataHandler.LoadedCulture.languageCode, key, count));
+			return GetTexture(PluralForms.GetPluralKey(languageDataHandler.LoadedCulture.languageCode, key, count));
 		}
 		
 		/// <summary>
@@ -666,12 +666,12 @@ namespace SmartLocalization
 		}
 		
 		/// <summary>
-		/// Returns a sprite in the current language for the key with a custom plural form. Returns null if nothing is found.
+		/// Returns a texture in the current language for the key with a custom plural form. Returns null if nothing is found.
 		/// </summary>
-		/// <returns>The sprite.</returns>
-		public Sprite GetSprite(string key, int count, Func<int, int> pluralForm)
+		/// <returns>The texture.</returns>
+		public Texture GetTexture(string key, int count, Func<int, int> pluralForm)
 		{
-			return GetSprite(PluralForms.GetPluralKey(key, count, pluralForm));
+			return GetTexture(PluralForms.GetPluralKey(key, count, pluralForm));
 		}
 		
 		/// <summary>
@@ -704,13 +704,21 @@ namespace SmartLocalization
 		{
 			return languageDataHandler.GetAsset<GameObject>(key);
 		}
-			
+
 		/// <summary>
 		/// Gets a sprite for the current language, returns null if nothing is found
 		/// </summary>
 		public Sprite GetSprite(string key)
-		{
+		{			
 			return languageDataHandler.GetAsset<Sprite>(key);
+		}
+
+		/// <summary>
+		/// Gets a texture for the current language, returns null if nothing is found
+		/// </summary>
+		public Texture GetTexture(string key)
+		{			
+			return languageDataHandler.GetAsset<Texture>(key);
 		}
 	
 		/// <summary>

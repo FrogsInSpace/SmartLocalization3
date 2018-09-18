@@ -1,5 +1,3 @@
-// Voloshin Maxim
-
 using UnityEngine;
 using UnityEngine.UI;
 

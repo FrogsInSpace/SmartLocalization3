@@ -1,6 +1,4 @@
-﻿// Voloshin Maxim
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace SmartLocalization.Editor

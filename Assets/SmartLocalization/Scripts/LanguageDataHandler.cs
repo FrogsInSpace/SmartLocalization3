@@ -169,7 +169,7 @@ internal class LanguageDataHandler
 		
 		if(VerboseLogging)
 		{
-			Debug.LogError("Could not get asset with key: " + key + " as asset type:" + typeof(T).ToString());
+			Debug.LogError("Could not get asset with key: " + key + " as asset type:" + typeof(T));
 		}
 			
 		return default (T);

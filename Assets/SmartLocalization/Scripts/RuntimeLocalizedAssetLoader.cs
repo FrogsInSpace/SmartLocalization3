@@ -1,47 +1,48 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-namespace SmartLocalization{
-internal class RuntimeLocalizedAssetLoader : ILocalizedAssetLoader 
+namespace SmartLocalization
 {
-	static readonly System.Type GameObjectType = typeof(GameObject);
-	static readonly System.Type AudioClipType = typeof(AudioClip);
-	static readonly System.Type TextureType = typeof(Texture);
-	static readonly System.Type TextAssetType = typeof(TextAsset);
-	static readonly System.Type FontType = typeof(Font);
-
-	public T LoadAsset<T>(string assetKey, string languageCode) where T : UnityEngine.Object
+	internal class RuntimeLocalizedAssetLoader : ILocalizedAssetLoader 
 	{
-		var loadedObject = Resources.Load(GetAssetFolderPath(typeof(T), languageCode) + "/" + assetKey);
-		if(loadedObject != null){	
-			return (T)loadedObject;
-		}
-		return default(T);
-	}
+		private static readonly Type GameObjectType = typeof(GameObject);
+		private static readonly Type AudioClipType  = typeof(AudioClip);
+		private static readonly Type SpriteType     = typeof(Sprite);
+		private static readonly Type TextureType    = typeof(Texture);
+		private static readonly Type TextAssetType  = typeof(TextAsset);
+		private static readonly Type FontType       = typeof(Font);
 	
-	string GetAssetFolderPath(System.Type assetType, string languageCode)
-	{
-		if(assetType == GameObjectType)
+		public T LoadAsset<T>(string assetKey, string languageCode) where T : UnityEngine.Object
 		{
-			return LanguageRuntimeData.PrefabsFolderPath(languageCode);
+			var loadedObject = Resources.Load<T>(GetAssetFolderPath(typeof(T), languageCode) + "/" + assetKey);
+			
+			return loadedObject != null ? loadedObject : default(T);
 		}
-		else if(assetType == AudioClipType)
-		{
-			return LanguageRuntimeData.AudioFilesFolderPath(languageCode);
-		}
-		else if(assetType == TextureType)
-		{
-			return LanguageRuntimeData.TexturesFolderPath(languageCode);
-		}
-		else if(assetType == TextAssetType)
-		{
-			return LanguageRuntimeData.TextAssetsFolderPath(languageCode);
-		}
-		else if(assetType == FontType)
-		{
-			return LanguageRuntimeData.FontsFolderPath(languageCode);
-		}			
 		
-		return string.Empty;
+		string GetAssetFolderPath(Type assetType, string languageCode)
+		{			
+			if(assetType == GameObjectType)
+			{
+				return LanguageRuntimeData.PrefabsFolderPath(languageCode);
+			}
+			else if(assetType == AudioClipType)
+			{
+				return LanguageRuntimeData.AudioFilesFolderPath(languageCode);
+			}
+			else if(assetType == SpriteType || assetType == TextureType)
+			{
+				return LanguageRuntimeData.TexturesFolderPath(languageCode);
+			}
+			else if(assetType == TextAssetType)
+			{
+				return LanguageRuntimeData.TextAssetsFolderPath(languageCode);
+			}
+			else if(assetType == FontType)
+			{
+				return LanguageRuntimeData.FontsFolderPath(languageCode);
+			}			
+			
+			return string.Empty;
+		}
 	}
-}
 }
