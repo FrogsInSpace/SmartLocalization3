@@ -3,89 +3,50 @@ using System.Collections.Generic;
 
 namespace SmartLocalization
 {
-	public class LoadExample : MonoBehaviour 
+	public class LoadExample : MonoBehaviour
 	{
-		private List<string> currentLanguageKeys;
-		private List<SmartCultureInfo> availableLanguages;
-		private LanguageManager languageManager;
-		private Vector2 valuesScrollPosition = Vector2.zero;
-		private Vector2 languagesScrollPosition = Vector2.zero;
-	
+		[SerializeField]
+		private AudioSource _audioSource;
+		
+		private LanguageManager _languageManager;
+
+		private List<SmartCultureInfo> _availableLanguages;
+		private int _currentLanguageIdx;
+
 		void Start () 
 		{
-			languageManager = LanguageManager.Instance;
+			_languageManager = LanguageManager.Instance;
 			
-			SmartCultureInfo deviceCulture = languageManager.GetDeviceCultureIfSupported();
-			if(deviceCulture != null)
-			{
-				languageManager.ChangeLanguage(deviceCulture);	
-			}
+			if(_languageManager.NumberOfSupportedLanguages > 0)
+				_availableLanguages = _languageManager.GetSupportedLanguages();
 			else
-			{
-				Debug.Log("The device language is not available in the current application. Loading default."); 
-			}
-			
-			if(languageManager.NumberOfSupportedLanguages > 0)
-			{
-				currentLanguageKeys = languageManager.GetAllKeys();
-				availableLanguages = languageManager.GetSupportedLanguages();
-			}
-			else
-			{
 				Debug.LogError("No languages are created!, Open the Smart Localization plugin at Window->Smart Localization and create your language!");
-			}
-	
-			LanguageManager.Instance.OnChangeLanguage += OnLanguageChanged;
-		}
-	
-		void OnDestroy()
-		{
-			if(LanguageManager.HasInstance)
+				
+			var deviceCulture = _languageManager.GetDeviceCultureIfSupported();
+
+			if (deviceCulture != null)
 			{
-				LanguageManager.Instance.OnChangeLanguage -= OnLanguageChanged;
+				_currentLanguageIdx = _availableLanguages.FindIndex(l => l == deviceCulture);
+				_currentLanguageIdx = _currentLanguageIdx < 0 ? 0 : _currentLanguageIdx;
 			}
-		}
-	
-		void OnLanguageChanged(LanguageManager languageManager)
-		{
-			currentLanguageKeys = languageManager.GetAllKeys();
-		}
-		
-		void OnGUI() 
-		{
-			if(languageManager.NumberOfSupportedLanguages > 0)
+			else
 			{
-				if(languageManager.CurrentlyLoadedCulture != null)
-				{
-					GUILayout.Label("Current Language:" + languageManager.CurrentlyLoadedCulture.ToString());
-				}
-				
-				GUILayout.BeginHorizontal();
-				GUILayout.Label("Keys:", GUILayout.Width(460));
-				GUILayout.Label("Values:", GUILayout.Width(460));
-				GUILayout.EndHorizontal();
-				
-				valuesScrollPosition = GUILayout.BeginScrollView(valuesScrollPosition);
-				foreach(var languageKey in currentLanguageKeys)
-				{
-					GUILayout.BeginHorizontal();
-					GUILayout.Label(languageKey, GUILayout.Width(460));
-					GUILayout.Label(languageManager.GetTextValue(languageKey), GUILayout.Width(460));
-					GUILayout.EndHorizontal();
-				}
-				GUILayout.EndScrollView();
-				
-				languagesScrollPosition = GUILayout.BeginScrollView (languagesScrollPosition);
-				foreach(SmartCultureInfo language in availableLanguages)
-				{
-					if(GUILayout.Button(language.nativeName, GUILayout.Width(960)))
-					{
-						languageManager.ChangeLanguage(language);
-					}
-				}
-	
-				GUILayout.EndScrollView();
+				Debug.Log("The device language is not available in the current application. Loading default.");
 			}
+
+			_languageManager.ChangeLanguage(_availableLanguages[_currentLanguageIdx]);
+			
+			_audioSource.clip = _languageManager.GetAudioClip("Anthem");
+			_audioSource.Play();
+		}
+	
+		public void OnNextLanguage()
+		{
+			_currentLanguageIdx = (_currentLanguageIdx + 1) % _availableLanguages.Count;
+			_languageManager.ChangeLanguage(_availableLanguages[_currentLanguageIdx]);
+			
+			_audioSource.clip = _languageManager.GetAudioClip("Anthem");
+			_audioSource.Play();
 		}
 	}
 }
