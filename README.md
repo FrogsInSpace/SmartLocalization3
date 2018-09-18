@@ -13,7 +13,7 @@ In comparison with original Smart Localization 2, developed by Niklas Borglund &
 
 # Instalation
 
-Please visit [Releases Page](https://github.com/chocolacula/SmartLocalization3/releases) where you can get .unitypackage for Unity 2018.2 or download and import Assets/SmartLocalization folder if yor Unity version is lower then 2018 (don't forget import TextMesh Pro from Asset Store). 
+Please visit [Releases Page](https://github.com/chocolacula/SmartLocalization3/releases) where you can get .unitypackage for Unity 2018.2 or download and import Assets/SmartLocalization folder if your Unity version is lower then 2018 (don't forget import TextMesh Pro from Asset Store). 
 
 # Instruction
 
