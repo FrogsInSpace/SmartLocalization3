@@ -22,9 +22,9 @@ namespace SmartLocalization.Editor
 			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
 			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.GameObject), 
 			                                             tempValue);
-//			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
-//			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.TEXTURE), 
-//			                                             tempValue);
+			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
+			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.Texture), 
+			                                             tempValue);
 			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
 			                                             LocalizedObject.GetFullKey(tempKey, LocalizedObjectType.String), 
 			                                             tempValue);
@@ -47,7 +47,7 @@ namespace SmartLocalization.Editor
 			tempPrefabValue.ObjectType = LocalizedObjectType.GameObject;
 
 			LocalizedObject tempTextureValue = new LocalizedObject(tempStringValue);
-			//tempTextureValue.ObjectType = LocalizedObjectType.TEXTURE;
+			tempTextureValue.ObjectType = LocalizedObjectType.Texture;
 
 			LanguageDictionaryHelper.AddNewKeyPersistent(testDictionary, 
 			                                             tempKey, 

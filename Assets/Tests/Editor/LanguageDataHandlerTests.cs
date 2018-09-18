@@ -141,7 +141,7 @@ namespace SmartLocalization.Editor
 		{
 			var languageDataHandler = GetLanguageDataHandler();
 			((MockLocalizedAssetLoader)languageDataHandler.AssetLoader).TestScenario = MockLocalizedAssetLoader.Scenario.ThrowSuccessfullyLoadedExceptions;
-			//Assert.IsTrue(languageDataHandler.Load(GetTestData("TestKey", "TestValue", LocalizedObjectType.TEXTURE)));
+			Assert.IsTrue(languageDataHandler.Load(GetTestData("TestKey", "TestValue", LocalizedObjectType.Texture)));
 			Assert.Throws<AssetSuccessfullyLoadedException>(()=> languageDataHandler.GetAsset<Texture>("TestKey"));
 		}
 
@@ -181,7 +181,7 @@ namespace SmartLocalization.Editor
 		public void GetTexture_KeyNotExist()
 		{
 			var languageDataHandler = GetLanguageDataHandler();
-			//Assert.IsTrue(languageDataHandler.Load(GetTestData("TestKey", "TestValue", LocalizedObjectType.TEXTURE)));
+			Assert.IsTrue(languageDataHandler.Load(GetTestData("TestKey", "TestValue", LocalizedObjectType.Texture)));
 			Assert.IsNull(languageDataHandler.GetAsset<Texture>("TestKeyNOTEXIST"));
 		}
 
