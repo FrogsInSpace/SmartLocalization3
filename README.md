@@ -1,6 +1,6 @@
 # Smart Localization 3
 
-In comparison with original Smart Localization 2, developed by Niklas Borglund & Jakob Hillerström this fork have some advantages:
+In comparison with original Smart Localization 2, developed by Niklas Borglund & Jakob Hillerström this fork has some advantages:
 
 -Unity 2018.2 full support  
 -TextMesh Pro support  
