@@ -1,3 +1,6 @@
+//Voloshin Maxim
+//Alexey Menshikh
+
 using System;
 using UnityEditor;
 using UnityEngine;
