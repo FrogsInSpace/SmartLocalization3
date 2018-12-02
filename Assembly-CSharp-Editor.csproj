@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{AEED69C9-E952-1AA7-8EF6-483957F19025}</ProjectGuid>
+    <ProjectGuid>{8CD07DBE-2E0D-D2F6-2742-5D2B7DCB4A53}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -120,16 +120,16 @@
     <None Include="Assets\SmartLocalization\Scripts\Editor\ThirdParty\Rotorz\Reorderable List Field\README.txt" />
     <None Include="Assets\SmartLocalization\Scripts\Editor\ThirdParty\Rotorz\Reorderable List Field\LICENSE.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -375,28 +375,28 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
     </Reference>
     <Reference Include="CsvHelper">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Assets/SmartLocalization/Scripts/Editor/ThirdParty/CSVHelper/CsvHelper.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Assets/SmartLocalization/Scripts/Editor/ThirdParty/CSVHelper/CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="ExcelLibrary">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Assets/SmartLocalization/Scripts/Editor/ThirdParty/ExcelLibrary/ExcelLibrary.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Assets/SmartLocalization/Scripts/Editor/ThirdParty/ExcelLibrary/ExcelLibrary.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="NPOI">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/NPOI.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/NPOI.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OOXML">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/NPOI.OOXML.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/NPOI.OOXML.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OpenXml4Net">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/NPOI.OpenXml4Net.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/NPOI.OpenXml4Net.dll</HintPath>
     </Reference>
     <Reference Include="NPOI.OpenXmlFormats">
-      <HintPath>D:/Documents/Projects/Unity/Smart-Localization-2/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/NPOI.OpenXmlFormats.dll</HintPath>
+      <HintPath>D:/Documents/Projects/Unity/SmartLocalization3/Assets/SmartLocalization/Scripts/Editor/ThirdParty/NPOI/NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/pyroz/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -443,7 +443,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{6F8865B0-68E4-9628-BB01-C2405747A7AC}</Project>
+      <Project>{6292B6CB-4C77-DA67-539B-D3E26ADE80F8}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>
